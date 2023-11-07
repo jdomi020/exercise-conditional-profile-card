@@ -29,33 +29,34 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
-  let name = `<h1> "${variables.name}" </h1>`;
-  if (variables.name === null) name = `<h1>Jose</h1>`;
+  // let name = `<h1> "${variables.name}" </h1>`;
+  // if (variables.name === null) name = `<h1>Jose</h1>`;
 
-  let lastName = `<h1> "${variables.lastName}" </h1>`;
-  if (variables.lastName === null) lastName = `<h1>Dominguez</h1>`;
+  // let lastName = `<h1> "${variables.lastName}" </h1>`;
+  // if (variables.lastName === null) lastName = `<h1>Dominguez</h1>`;
 
-  let role = `<h2> "${variables.role}" </h2>`;
-  if (variables.role === null) role = `<h2>Front End Developer</h2>`;
+  // let role = `<h2> "${variables.role}" </h2>`;
+  // if (variables.role === null) role = `<h2>Front End Developer</h2>`;
 
-  let city = `<h1> "${variables.city}" </h1>`;
-  if (variables.city === null) city = `<h1>Miami/h1>`;
+  // let city = `<h1> "${variables.city}" </h1>`;
+  // if (variables.city === null) city = `<h1>Miami</h1>`;
 
-  let country = `<h3> "${variables.country}" </h3>`;
-  if (variables.country === null) country = `<h3>United States</h3>`;
+  // let country = `<h3> "${variables.country}" </h3>`;
+  // if (variables.country === null) country = `<h3>United States</h3>`;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${name}&nbsp${lastName}</h1>
-          <h2>${role}</h2>
-          <h3>${city} ${country}</h3>
+          <h1>${variables.name ? variables.name : "First Name"}&nbsp
+          ${variables.lastName ? variables.lastName : "Last Name"}</h1>
+          <h2>${variables.role ? variables.role : "Role"}</h2>
+          <h3>${city} ${variables.country ? variables.country : "Country"}&nbsp ${variables.city ? variables.city : "Miami"}</h3>
           <ul class=${variables.socialMediaPosition}>
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/ ${variables.twitter ? variables.twitter : "4geeksacademy" }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github ? variables.github : "4geeksacademy" }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/school/${variables.linkedin ? variables.linkedin : "4geeksacademy" }"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram ? variables.instagram : "4geeksacademy" }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
