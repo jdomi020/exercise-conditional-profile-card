@@ -35,14 +35,14 @@ function render(variables = {}) {
   let lastName = `<h1> "${variables.lastName}" </h1>`;
   if (variables.lastName === null) lastName = `<h1>Dominguez</h1>`;
 
-  let role = `<h1> "${variables.role}" </h1>`;
-  if (variables.role === null) role = `<h1>Front End Developer</h1>`;
+  let role = `<h2> "${variables.role}" </h2>`;
+  if (variables.role === null) role = `<h2>Front End Developer</h2>`;
 
   let city = `<h1> "${variables.city}" </h1>`;
   if (variables.city === null) city = `<h1>Miami/h1>`;
 
-  let country = `<h1> "${variables.country}" </h1>`;
-  if (variables.country === null) country = `<h1>United States</h1>`;
+  let country = `<h3> "${variables.country}" </h3>`;
+  if (variables.country === null) country = `<h3>United States</h3>`;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
